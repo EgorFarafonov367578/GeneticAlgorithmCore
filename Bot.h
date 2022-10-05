@@ -7,7 +7,6 @@
 
 #endif //GENETICALGORITHM_BOT_H
 
-#include<vector>
 
 enum class ObjectsType { Empty, Wall, Food, Poison, Bot};
 
@@ -85,7 +84,7 @@ class Bot{
             table[posision[pos].first][posision[pos].second] = Objects(ObjectsType::Empty);
             posision[pos] = new_posision;
             table[posision[pos].first][posision[pos].second] = Objects(pos);
-            health+=11;
+            health= max(health + 11,100);
             break;
           case (ObjectsType::Bot):
             break;

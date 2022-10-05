@@ -92,7 +92,7 @@ class Scene{
       bots[i].iter(i,table,bots,losers,posision);
     }
   }
-  void OnFrame() {
-    
+  void Winers() {
+
   }
 };

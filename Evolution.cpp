@@ -3,7 +3,7 @@
 //
 #include <fstream>
 #include "Evolution.h"
-#include "Bot.h"
+
 
 void Evolution(std::string old_generetion_file_name, std::string new_generetion_file_name, int number_of_battles)
 {
