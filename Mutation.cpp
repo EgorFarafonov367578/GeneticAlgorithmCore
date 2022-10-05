@@ -21,7 +21,7 @@ std::vector <Bot> Mutation(std::vector <Bot> bots)
             Bot new_bot = bots[j];
             for (int x = 0; x < 3; x++)
             {
-                new_bot.ChangeDna(rand() % 64,rand() % 64);
+                new_bot.ChangeDna(rand() % 64,rand() % 70);
             }
             new_bots.push_back(new_bot);
         }

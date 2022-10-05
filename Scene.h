@@ -11,23 +11,6 @@
 
 #include <iostream>
 
-enum class ObjectsType { Empty, Wall, Food, Poison, Bot};
-
-class Objects {
- private:
-  ObjectsType o_type;
-  int bot;
- public:
-  ObjectsType GetType() {
-    return o_type;
-  }
-  Objects(): o_type(ObjectsType::Empty), bot(-1) {}
-  Objects(ObjectsType ob_type): o_type(ob_type), bot(-1) {}
-  Objects(int bot): o_type(ObjectsType::Bot), bot(bot) {}
-  int iter(int x, int y, std::vector<Bot>* bots, std::vector<std::vector<Objects>>& table) {
-    
-  }
-};
 
 class Scene{
  private:
@@ -104,6 +87,12 @@ class Scene{
     }
   }
   void Iteration() {
-
+    for (int i = 0; i < 64; i++)
+    {
+      bots[i].iter(i,table,bots,losers,posision);
+    }
+  }
+  void OnFrame() {
+    
   }
 };
