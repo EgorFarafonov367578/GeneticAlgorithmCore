@@ -15,8 +15,8 @@ std::vector <Bot> Battle(std::vector <Bot> bots)
     return scene.GetWinners();
 }
 int max(int a, int b) {
-if (a < b) {
-return b;
-}
-return a;
+  if (a < b) {
+    return b;
+  }
+  return a;
 }

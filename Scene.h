@@ -44,7 +44,9 @@ class Scene{
     }
     for (int i = 1; i < 65; i++)
     {
-      table[i][rand() % 64] = Objects(i);
+      int y = rand() % 64;
+      table[i][y] = Objects(i);
+      posision.push_back(std::make_pair(i,y));
     }
     for (int i = 0; i < 66; i++)
     {
@@ -89,7 +91,10 @@ class Scene{
   void Iteration() {
     for (int i = 0; i < 64; i++)
     {
-      bots[i].iter(i,table,bots,losers,posision);
+      //std::cout << "Hi" << std::endl;
+      if (posision[i] != std::make_pair(-1,-1)) {
+        bots[i].iter(i,table,bots,losers,posision);
+      }
     }
   }
   std::vector<Bot> GetWinners() {
