@@ -24,16 +24,26 @@ public:
     Objects(): o_type(ObjectsType::Empty), bot(-1) {}
     Objects(ObjectsType ob_type): o_type(ob_type), bot(-1) {}
     Objects(int bot): o_type(ObjectsType::Bot), bot(bot) {}
-    int iter(int x, int y, std::vector<Bot>* bots, Bot[][])
+    int iter(int x, int y, std::vector<Bot>* bots, std::vector<std::vector<Objects>>& table) {
+
+    }
 };
 
 class Scene{
 private:
-    Objects table[66][66];
+    std::vector<std::vector<Objects>> table;
     std::vector <Bot> bots;
     std::vector <Bot> losers;
 public:
     Scene(std::vector <Bot> given_bots): bots(given_bots), losers(std::vector<Bot>()){
+        for (int i = 0; i < 66; i++)
+        {
+            table.push_back(std::vector<Objects>());
+            for (int j = 0; j < 66; j++)
+            {
+                table[i].push_back(Objects());
+            }
+        }
         for (int i = 0; i < 66; i++)
         {
             for (int j = 0; j < 66; j++)
