@@ -92,7 +92,18 @@ class Scene{
       bots[i].iter(i,table,bots,losers,posision);
     }
   }
-  void Winers() {
-
+  std::vector<Bot> GetWinners() {
+    std::vector<Bot> score[100];
+    for (int i = 0; i < 64; i++) {
+      if (posision[i] != std::make_pair(-1,-1)) {
+        score[bots[i].health].push_back(bots[i]);
+      }
+    }
+    for (int i = 0; i < 100; i++) {
+      for (int j = 0; j < score[i].size(); j++) {
+        losers.push_back(score[i][j]);
+      }
+    }
+    return losers;
   }
 };

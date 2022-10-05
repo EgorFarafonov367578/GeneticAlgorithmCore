@@ -14,4 +14,4 @@ std::vector <Bot> Battle(std::vector <Bot> bots);
 
 std::vector <Bot> Mutation(std::vector <Bot> bots);
 
-int max(int a,int b);
+

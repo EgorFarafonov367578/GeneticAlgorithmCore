@@ -7,6 +7,7 @@
 
 #endif //GENETICALGORITHM_BOT_H
 
+int max(int a,int b);
 
 enum class ObjectsType { Empty, Wall, Food, Poison, Bot};
 
@@ -27,9 +28,9 @@ class Bot{
  private:
   int dna[64];
   int iterator;
-  int health;
   int direction;
  public:
+  int health;
   Bot(int given_dna[]): iterator(0), health(99), direction(rand() % 4){
     for(int i = 0; i < 64; i ++)
     {
@@ -84,7 +85,7 @@ class Bot{
             table[posision[pos].first][posision[pos].second] = Objects(ObjectsType::Empty);
             posision[pos] = new_posision;
             table[posision[pos].first][posision[pos].second] = Objects(pos);
-            health= max(health + 11,100);
+            health= max(health + 11,99);
             break;
           case (ObjectsType::Bot):
             break;

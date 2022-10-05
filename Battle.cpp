@@ -10,9 +10,9 @@ std::vector <Bot> Battle(std::vector <Bot> bots)
     for (int i = 0; i < 1000; i++)
     {
         scene.Iteration();
-        scene.Show();
+        //scene.Show();
     }
-    return scene.GetWinners;
+    return scene.GetWinners();
 }
 int max(int a, int b) {
 if (a < b) {
