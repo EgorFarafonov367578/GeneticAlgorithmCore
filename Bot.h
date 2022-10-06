@@ -97,7 +97,7 @@ class Bot{
             break;
         }
         iterator = (iterator + 1) % 64;
-      } else if (1 <= dna[iterator] <= 4) {
+      } else if (1 <= dna[iterator] && dna[iterator] <= 4) {
         direction = (direction + (dna[iterator] - 1)) % 4;
         iterator = (iterator + 1) % 64;
         health--;
