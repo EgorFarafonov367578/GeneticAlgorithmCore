@@ -2,6 +2,6 @@ Hello
 
 Evolution +
 Mutation +
-Battle -
-Scene -
-Bot -
+Battle +
+Scene +
+Bot +
