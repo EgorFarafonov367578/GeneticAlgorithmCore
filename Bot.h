@@ -7,7 +7,7 @@
 
 #endif //GENETICALGORITHM_BOT_H
 
-int max(int a,int b);
+int min(int a,int b);
 
 enum class ObjectsType { Empty, Wall, Food, Poison, Bot};
 
@@ -90,14 +90,14 @@ class Bot{
             table[posision[pos].first][posision[pos].second] = Objects(ObjectsType::Empty);
             posision[pos] = new_posision;
             table[posision[pos].first][posision[pos].second] = Objects(pos);
-            health= max(health + 11,99);
+            health= min(health + 11,99);
             break;
           case (ObjectsType::Bot):
             health--;
             break;
         }
         iterator = (iterator + 1) % 64;
-      } else if (1 <= dna[iterator] && dna[iterator] <= 4) {
+      } else if ((1 <= dna[iterator]) && (dna[iterator] <= 4)) {
         direction = (direction + (dna[iterator] - 1)) % 4;
         iterator = (iterator + 1) % 64;
         health--;
