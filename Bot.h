@@ -14,8 +14,8 @@ enum class ObjectsType { Empty, Wall, Food, Poison, Bot};
 class Objects {
  private:
   ObjectsType o_type;
-  int bot;
  public:
+    int bot;
   ObjectsType GetType() {
     return o_type;
   }
