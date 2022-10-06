@@ -14,10 +14,10 @@
 
 class Scene{
  private:
-  std::vector <Bot> bots;
   std::vector <Bot> losers;
   std::vector <std::pair<int,int>> posision;
  public:
+    std::vector <Bot> bots;
     std::vector<std::vector<Objects>> table;
   Scene(std::vector <Bot> given_bots): bots(given_bots), losers(std::vector<Bot>()){
     for (int i = 0; i < 66; i++)
