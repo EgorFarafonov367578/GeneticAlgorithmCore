@@ -44,7 +44,7 @@ class Scene{
     }
     for (int i = 1; i < 65; i++)
     {
-      int y = rand() % 64;
+      int y = 1 + rand() % 64;
       table[i][y] = Objects(i);
       posision.push_back(std::make_pair(i,y));
     }
