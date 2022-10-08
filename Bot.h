@@ -158,7 +158,7 @@ class Bot{
             break;
         }
         health--;
-      } else if (7 <= dna[iterator] <= 70) {
+      } else if (7 <= dna[iterator] && dna[iterator] <= 70) {
         iterator = (iterator + dna[iterator] - 6) % 64;
         health--;
       } else {

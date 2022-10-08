@@ -99,6 +99,7 @@ class Scene{
   }
   std::vector<Bot> GetWinners() {
     std::vector<Bot> score[100];
+    std::vector<Bot> winners;
     for (int i = 0; i < 64; i++) {
       if (posision[i] != std::make_pair(-1,-1)) {
         score[bots[i].health].push_back(bots[i]);
@@ -109,6 +110,10 @@ class Scene{
         losers.push_back(score[i][j]);
       }
     }
-    return losers;
+    for (int i = 0; i <= 8; i++) {
+        winners.push_back(losers[63 - i]);
+        winners[i].health = 99;
+    }
+    return winners;
   }
 };
