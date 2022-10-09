@@ -31,10 +31,16 @@ class Bot{
   int direction;
  public:
   int health;
-  Bot(int given_dna[]): iterator(0), health(99), direction(rand() % 4){
+  Bot(const int given_dna[]): iterator(0), health(99), direction(rand() % 4){
     for(int i = 0; i < 64; i ++)
     {
       dna[i] = given_dna[i];
+    }
+  }
+  Bot(const Bot& bot): iterator(0), health(99), direction(rand() % 4) {
+    for (int i = 0; i < 64; i++)
+    {
+      dna[i] = bot.dna[i];
     }
   }
   void ChangeDna(int where,int on_what)
